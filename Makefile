@@ -54,7 +54,7 @@ vendor_remove_files := etc/permissions/org.cyanogenmod.livedisplay.xml
 # The default value is Bluetooth.
 # You can configure the apk name in the vendor/system/app or vendor/system/priv-app directory.
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService HTMLViewer KeyChain Nfc PicoTts PrintSpooler Stk UserDictionaryProvider BackupRestoreConfirmation DefaultContainerService ExternalStorageProvider FusedLocation InputDevices ProxyHandler SharedStorageBackup Shell
+vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService HTMLViewer KeyChain Nfc PicoTts PrintSpooler Stk UserDictionaryProvider BackupRestoreConfirmation DefaultContainerService ExternalStorageProvider FusedLocation InputDevices ProxyHandler SharedStorageBackup Shell \
 WAPPushManager CaptivePortalLogin CMSettingsProvider telresources
 
 ##############################################################################
