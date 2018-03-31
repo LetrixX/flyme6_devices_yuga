@@ -1,0 +1,46 @@
+on early-boot
+
+    # Proximity sensor configuration
+    # Duration Cycle. Valid range is 0 - 3.
+    write /sys/bus/i2c/devices/2-0054/cycle 1
+    # Number of pulses in burst. Valid range is 0 - 15.
+    write /sys/bus/i2c/devices/2-0054/nburst 8
+    # Burst frequency. Valid range is 0 - 3.
+    write /sys/bus/i2c/devices/2-0054/freq 2
+    # sensor threshold. Valid range is 0 - 15 (0.12V - 0.87V)
+    write /sys/bus/i2c/devices/2-0054/threshold 4
+    # RFilter. Valid range is 0 - 3.
+    write /sys/bus/i2c/devices/2-0054/filter 1
+
+on boot
+    # Owner for the proximity sensor
+    chown system system /sys/devices/i2c-2/2-0054/threshold
+    chown system system /sys/devices/i2c-2/2-0054/nburst
+
+    # Panel backlight
+    chown system system /sys/class/leds/lm3533-lcd-bl/brightness
+    chmod 660 /sys/class/leds/lm3533-lcd-bl/brightness
+
+    # Set default brightness for boot
+    write /sys/class/leds/lm3533-lcd-bl/brightness 127
+
+    # Vibrator
+    chown system system /sys/class/timed_output/vibrator/level
+
+    # LM356x/cameralight
+    chown system camera /sys/devices/i2c-0/0-0053/torch_enable
+    chmod 660 /sys/devices/i2c-0/0-0053/torch_enable
+    chown system camera /sys/devices/i2c-0/0-0053/torch_current
+    chmod 660 /sys/devices/i2c-0/0-0053/torch_current
+    chown system system /sys/devices/i2c-0/0-0053/privacy_enable
+    chown system system /sys/devices/i2c-0/0-0053/privacy_current
+    chown system camera /sys/devices/i2c-0/0-0053/flash_enable
+    chown system camera /sys/devices/i2c-0/0-0053/flash_duration
+    chown system camera /sys/devices/i2c-0/0-0053/flash_synchronization
+    chmod 660 /sys/devices/i2c-0/0-0053/flash_synchronization
+    chown system camera /sys/devices/i2c-0/0-0053/flash_current
+    chmod 660 /sys/devices/i2c-0/0-0053/flash_current
+    chown system camera /sys/devices/i2c-0/0-0053/status
+
+    # Camera/Libals
+    chown media input /dev/input/event11
