@@ -145,6 +145,8 @@
 /sys/devices/virtual/misc/hw_random(/.*)?	u:object_r:sysfs_hwrandom:s0
 /sys/module/lowmemorykiller(/.*)?	u:object_r:sysfs_lowmemorykiller:s0
 /sys/kernel/debug/tracing(/.*)?	u:object_r:debugfs_tracing:s0
+/dev/socket/flymed	u:object_r:flymed_socket:s0
+/system/bin/flymed	u:object_r:flymed_exec:s0
 /mnt/asec(/.*)?	u:object_r:asec_apk_file:s0
 /mnt/asec/[^/]+/[^/]+\.zip	u:object_r:asec_public_file:s0
 /mnt/asec/[^/]+/lib(/.*)?	u:object_r:asec_public_file:s0

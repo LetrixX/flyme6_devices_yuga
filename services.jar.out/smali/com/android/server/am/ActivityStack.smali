@@ -108,6 +108,17 @@
 
 
 # instance fields
+.field private mFlymeArrayList:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field final mActivityContainer:Lcom/android/server/am/ActivityStackSupervisor$ActivityContainer;
 
 .field mBounds:Landroid/graphics/Rect;
@@ -5260,6 +5271,23 @@
     .line 2330
     :cond_19
     :goto_7
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v24
+
+    invoke-direct {v0, v1}, Lcom/android/server/am/ActivityStack;->checkFlymeAccessControl(Lcom/android/server/am/ActivityRecord;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_flyme_0
+
     if-eqz p1, :cond_1b
 
     move-object/from16 v0, p1
@@ -22030,4 +22058,18 @@
     move v4, v6
 
     goto :goto_2
+.end method
+
+.method private checkFlymeAccessControl(Lcom/android/server/am/ActivityRecord;)Z
+    .locals 1
+    .param p1, "next"    # Lcom/android/server/am/ActivityRecord;
+
+    .prologue
+    iget-object v0, p0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+
+    invoke-virtual {v0, p0, p1}, Lcom/android/server/am/ActivityManagerService;->checkAccessControl(Lcom/android/server/am/ActivityStack;Lcom/android/server/am/ActivityRecord;)Z
+
+    move-result v0
+
+    return v0
 .end method

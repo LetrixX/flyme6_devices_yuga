@@ -5999,10 +5999,8 @@
 
     move-result-object v0
 
-    .line 3271
-    const v1, 0x10400b7
+    const v1, #android:string@config_mms_user_agent_profile_url#t
 
-    .line 3270
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -6031,10 +6029,8 @@
 
     move-result-object v0
 
-    .line 3262
-    const v1, 0x10400b6
+    const v1, #android:string@config_mms_user_agent#t
 
-    .line 3261
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -9683,10 +9679,8 @@
 
     move-result-object v0
 
-    .line 3181
-    const v1, 0x1120068
+    const v1, #android:bool@config_sms_capable#t
 
-    .line 3180
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result v0
@@ -9914,10 +9908,8 @@
 
     move-result-object v0
 
-    .line 3166
-    const v1, 0x1120065
+    const v1, #android:bool@config_voice_capable#t
 
-    .line 3165
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result v0
