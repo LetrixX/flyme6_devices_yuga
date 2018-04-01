@@ -7,6 +7,6 @@ base_addr=0x80200000
 kernel_offset=0x00008000
 ramdisk_offset=0x02000000
 tags_offset=0x00000100
-cmd_line='androidboot.hardware=qcom msm_rtb.filter=0x3F ehci-hcd.park=3 buildvariant=userdebug'
+cmd_line='androidboot.hardware=qcom msm_rtb.filter=0x3F ehci-hcd.park=3 buildvariant=userdebug androidboot.selinux=permissive'
 board=""
 format=gzip
