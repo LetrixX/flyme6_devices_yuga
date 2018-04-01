@@ -93,7 +93,7 @@ vendor_modify_jars := framework services telephony-common wifi-service org.cyano
 # The default value is nothing.
 # You can configure the board system apk name in the value.
 #-----------------------------------------------------------------------------
-board_remove_apps := LogReport NfcNci OperaMax Bridge CosMaster DesktopBackup GameCenter IflytekSpeechService Life Mall MzCompaign MzPay Pedometer Reader RoamingPay EBook GameSDKService NetContactService VoiceAssistant Wallet YellowPage
+board_remove_apps := LogReport NfcNci OperaMax Bridge CosMaster DesktopBackup GameCenter IflytekSpeechService Life Mall MzCompaign MzPay Pedometer Reader RoamingPay EBook GameSDKService VoiceAssistant Wallet Weather
 
 ##############################################################################
 # The value decides which apk you want to modify, when the apk is based on the board system apk.
@@ -181,7 +181,7 @@ USE_ASSERTIONS_IN_UPDATER_SCRIPT := false
 # Defines whether build an international version of package.
 # Default: false
 #-----------------------------------------------------------------------------
-PRODUCE_INTERNATIONAL_ROM := true
+#PRODUCE_INTERNATIONAL_ROM := true
 
 ##############################################################################
 # Defines whether use sepolicy inject.
